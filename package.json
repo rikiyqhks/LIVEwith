@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http": "^0.0.1-security"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "install": "^0.13.0",
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.4.1",
+    "websocket": "^1.0.34"
+  }
+}

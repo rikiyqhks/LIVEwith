@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="jp">
+
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=charset=utf-8">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@500&display=swap" rel="stylesheet"> 
+    <title>リアルタイムチャットアプリ</title>
+
+  </head>
+  <body>
+
+    <div id="block">
+      
+      <div class="center">
+        <img id="top-img" src="img/favicon.png">
+      </div>
+
+      <h1 class="center">リアルタイムチャット部屋</h1>
+
+      <h2 class="center">現在の接続ユーザー数は<span id="count"></span>人です</h2>
+
+      <form id="room-form" action="">
+
+        <input id="input-name" placeholder="名前（最大12文字）" type="text" autocomplete="off" required maxlength="12" />
+        <input id="input-roomid" placeholder="ルームID（最大8文字）" type="text" name="enter" required maxlength="8">
+        <input id="join" type="submit" value="部屋に入る">
+
+      </form>
+
+    </div>
+
+    <div id="hidden">
+
+      <form id="leave-form" action="">
+
+        <p style="margin: 0px 0px -5px 0px;"><input id="leave" type="submit" value="部屋から退出する">※人数にカーソルを合わせると、メンバーの詳細を確認できます。</p>
+
+      </form>
+
+      <p id="roomid">参加中のルームID: <span id="roomidspan"></span>  
+      現在の部屋の人数: <span id="is-joinNum" style="cursor: pointer; position: relative;"></span><span id="detail"></span> 人 
+      あなたの名前: <span id="namespan"></span></p>
+      <ul id="messages"></ul>
+
+      <form id="comment-form" action="">
+
+        </p><input id="chat" placeholder="メッセージ（空白では送信できません。最大50文字）" type="text" autocomplete="off" required maxlength="50" /><button>発言する</button>
+
+      </form>
+
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="webSocket.js"></script>
+
+  </body>
+
+</html>
